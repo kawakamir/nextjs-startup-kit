@@ -4,11 +4,12 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
     // Uncomment the following lines to enable eslint-config-prettier
     // Is not enabled right now to avoid issues with the Next.js repo
     // "prettier",
     // "prettier/@typescript-eslint"
+    "airbnb"
   ],
   "env": {
     "es6": true,
@@ -17,6 +18,7 @@
     "node": true
   },
   "rules": {
+    "react/jsx-filename-extension": [2, { "extensions": [".jsx", ".tsx"]}],
     "react/react-in-jsx-scope": 0,
     "react/display-name": 0,
     "react/prop-types": 0,
@@ -39,5 +41,12 @@
         "allow": ["warn", "error"]
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "directory": "."
+      }
+    }
   }
 }
